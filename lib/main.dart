@@ -37,15 +37,16 @@ class _HomePageState extends State<HomePage> {
 
   changeColor() async {
     var result = await channel.invokeMethod("getcolor");
+    print(result);
     setColor(result);
   }
 
- sendColor() async {
-    var result = await channel.invokeMethod("sendColor",{"color":"0xffd1d1d1"});
-    setColor(result) ;
+  sendColor() async {
+    var result =
+        await channel.invokeMethod("sendColor", {"color": "0xffd1d1d1"});
+    setColor(result);
     print(result);
   }
-
 
   setColor(String clr) {
     setState(() {
